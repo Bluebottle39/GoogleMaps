@@ -220,20 +220,28 @@ function initMap() {
       },
     ],
   };
+
   //Nouvelle carte
   var map = new google.maps.Map(document.getElementById("map"), options);
 
-  addMarker({
-    coords: { lat: 46.7785, lng: 6.6412 },
-    iconImage: "./icons/home.png",
-    content: "<h1>Yverdon</h1>",
-  });
+  //Array of Markers
+  var markers = [
+    {
+      coords: { lat: 46.7785, lng: 6.6412 },
+      iconImage: "./icons/home.png",
+      content: "<h1>Yverdon</h1>",
+    },
+    {
+      coords: { lat: 46.821581, lng: 6.500226 },
+      iconImage: "./icons/cpnv.png",
+      content: "<h1>CPNV</h1>",
+    },
+  ];
 
-  addMarker({
-    coords: { lat: 46.7785, lng: 6.6412 },
-    iconImage: "./icons/cpnv.png",
-    content: "<h1>CPNV</h1>",
-  });
+  //loop though markers
+  for (var i = 0; i < markers.length; i++) {
+    addMarker(markers[i]);
+  }
 
   //Fonction ajouter marker
   function addMarker(props) {
