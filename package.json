@@ -2,7 +2,7 @@
   "name": "code",
   "version": "1.0.0",
   "description": "test api google maps",
-  "main": "index.js",
+  "main": "./js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
