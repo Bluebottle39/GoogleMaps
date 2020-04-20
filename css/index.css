@@ -1,8 +1,41 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  font-size: 62.5%; /*1rem = 10px, 10/16px = 62.5%*/
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 #map {
-  height: 800px;
+  height: 90vh;
   width: 100%;
 }
 h1 {
-  color: blue;
-  font-size: 2em;
+  color: black;
+  font-size: 4rem;
+}
+
+a,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+.info img {
+  width: 6rem;
+  height: 6rem;
 }

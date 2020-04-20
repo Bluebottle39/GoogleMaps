@@ -4,6 +4,7 @@ function initMap() {
     zoom: 9,
     //centrer sur yverdon
     center: { lat: 46.7785, lng: 6.6412 },
+    //définir le style de la carte
     styles: [
       {
         elementType: "geometry",
@@ -224,22 +225,23 @@ function initMap() {
   //Nouvelle carte
   var map = new google.maps.Map(document.getElementById("map"), options);
 
-  //Array of Markers
+  //Tableau des markers
   var markers = [
     {
       coords: { lat: 46.7785, lng: 6.6412 },
-      iconImage: "./icons/home.png",
+      iconImage: "./assets/icons/home.png",
       content: "<h1>Yverdon</h1>",
     },
     {
       coords: { lat: 46.821581, lng: 6.500226 },
-      iconImage: "./icons/cpnv.png",
+      iconImage: "./assets/icons/cpnv.png",
       content: "<h1>CPNV</h1>",
     },
   ];
 
-  //loop though markers
+  //itérer sur les markers
   for (var i = 0; i < markers.length; i++) {
+    //ajouter marker
     addMarker(markers[i]);
   }
 
@@ -256,12 +258,12 @@ function initMap() {
       marker.setIcon(props.iconImage);
     }
 
-    //verifier si infoWindo
+    //verifier si text popup
     if (props.content) {
       var infoWindow = new google.maps.InfoWindow({
         content: props.content,
       });
-
+      //détecter click
       marker.addListener("click", function () {
         infoWindow.open(map, marker);
       });
